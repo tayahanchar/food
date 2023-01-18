@@ -2,13 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: './src/script.js',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, './dist'),
-    assetModuleFilename: 'assets/[hash][ext][query]'
+    assetModuleFilename: 'assets/[name][ext]',
 	},
   devServer: {
     open: true,
@@ -24,7 +25,12 @@ module.exports = {
     }),
     new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/assets/images", to: "assets/images" },
+      ],
     }),
   ],
   module: {

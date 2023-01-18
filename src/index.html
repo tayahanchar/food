@@ -9,9 +9,9 @@
 <body>
   <div class="wrapper">
     <header class="header">
-      <a href="#">
+      <a href="index.html">
         <div class="logo">
-          <img class="logo__img" src="assets/images/avocado.svg" alt="avocado">
+          <img class="logo__img" src="./assets/images/avocado.svg" alt="avocado">
           <div class="logo__descr">
             <p class="logo__title">Avocado</p>
             <p class="logo__text">Food delivery</p>
@@ -21,49 +21,40 @@
 
       <nav class="nav">
         <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="">Home</a></li>
-          <li class="nav__item"><a class="nav__link" href="">Menu</a></li>
-          <li class="nav__item"><a class="nav__link" href="">Contacts</a></li>
+          <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
+          <li class="nav__item"><a class="nav__link" href="#title">Menu</a></li>
+          <li class="nav__item"><a class="nav__link" href="#food">Food</a></li>
+          <li class="nav__item"><a class="nav__link" href="#food">Contacts</a></li>
         </ul>
       </nav>
 
     </header>
 
     <main class="main">
-      <h1 class="title">Healthy food with home delivery</h1>
-
-
       <div class="menu">
-        <img class="menu__img" src="./assets/images/balanced.jpg" alt="food">
+        <img class="menu__img" alt="food">
 
-        <ul class="menu__content">
-          <li class="menu__item">Balanced menu</li>
-          <li class="menu__item">Office menu</li>
-          <li class="menu__item">Vegetarian menu</li>
-          <li class="menu__item">Drinks</li>
-        </ul>
+        <div>
+          <h2 class="menu__title" id="title">Choose your menu</h2>
+          <ul class="menu__content">
+            <li class="menu__item active-menu" data-menu="balanced">Balanced menu</li>
+            <li class="menu__item" data-menu="office">Office menu</li>
+            <li class="menu__item" data-menu="vegetarian">Vegetarian menu</li>
+            <li class="menu__item" data-menu="drinks">Drinks</li>
+          </ul>
+        </div>
+
+        <p class="menu__descr"></p>
       </div>
+
 
       <div class="food">
-        <ul class="food__list">
-          <li class="food__item">
-            <h2>01. Breakfast</h2>
-            <img class="food__img" src="assets/images/0_breakfast.jpg" alt="breakfast">
-            <p>Rice noodles with Vegetables</p>
-            <p>Price</p>
-          </li>
-          <li class="food__item">
-            <h2>02. Lunch</h2>
-            <img class="food__img" src="assets/images/1_breakfast.png" alt="breakfast">
-            <p>Rice noodles with Vegetables</p>
-            <p>Price</p>
-          </li>
-          <li class="food__item">03. Dinner</li>
-        </ul>
+        <ul class="food__list" id="food"></ul>
       </div>
+
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="food">
       footer
     </footer>
   </div>
