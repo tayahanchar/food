@@ -95,7 +95,6 @@ const menuDescription = document.querySelector('.menu__descr');
 const foodList = document.querySelector('.food__list');
 const menuList = document.querySelector('.menu__content');
 
-
 function init(menu) {
   menuImg.src = menu.src;
   menuDescription.textContent = menu.text;
@@ -108,7 +107,7 @@ function init(menu) {
             <img class="food__img" src="${item.src}" alt="breakfast">
             <p class="food__name">${item.name}</p>
             <p class="food__price">Price: <span class="price">${item.price}$</span></p>
-            <button class="add-item">ADD TO BAG</button>
+            <button class="add-item">Add to bag</button>
           </li>`;
     i++;
   });
@@ -123,9 +122,7 @@ function changeMenu(event) {
     document.querySelectorAll('.menu__item').forEach(item => {
       item.classList.remove('active-menu');
     });
-
     event.target.classList.add('active-menu');
-    console.log(`${event.target.dataset.menu}`)
     init(menu[event.target.dataset.menu]);
   }
 }
